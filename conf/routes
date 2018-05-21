@@ -22,11 +22,24 @@ GET     /assets/*file               controllers.Assets.versioned(file)
 
 # nueva ruta en el archivo routes
 
-GET     /hola/:name            controllers.HolaMundoController.index(name: String)
+GET     /contentType           controllers.HolaMundoController.index()
 
 
 GET     /hello                  controllers.HolaMundoController.hello(n: String)
 
 GET     /hello1                  controllers.HolaMundoController.hello1
+
+
+# crear diversas acciones y mapearlas en el archivo routes, que retornen mensajes con codigos http 200,401,500
+
+# Responds with 404 Not Found
+GET   /orders     controllers.Default.notFound
+
+# Responds with 500 Internal Server Error
+GET   /clients    controllers.Default.error
+
+# Responds with 501 Not Implemented
+GET   /posts      controllers.Default.todo
+
 
 
