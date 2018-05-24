@@ -1,23 +1,20 @@
 package controllers
 
-import javax.inject.{Inject, Singleton}
+
+import com.google.inject.Inject
 import play.api.Configuration
 import play.api.mvc._
 
 
 
-@Singleton
+@Inject
 class HolaMundoController @Inject()(config: Configuration, cc: ControllerComponents, authenticatedUserAction: AuthenticatedUserAction) extends AbstractController(cc)  {
-
-
 
 
         def index() = Action {
           Ok("Hello World")
 
         }
-
-
         def hello(name: String) = Action {
                Ok(views.html.hello(name))
         }
@@ -25,9 +22,6 @@ class HolaMundoController @Inject()(config: Configuration, cc: ControllerCompone
         def hello1() = Action {
             Ok(views.html.hello1())
         }
-
-
-
 }
 
 

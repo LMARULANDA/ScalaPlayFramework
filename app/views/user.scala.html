@@ -1,5 +1,5 @@
-@(userForm: Form[model.UserFormData],users : Seq[model.User])(implicit request: RequestHeader)
-@main("Welcome to Play", assetsFinder){
+@(userForm: Form[model.UserFormData],users : Seq[model.User])(implicit request: RequestHeader,messages : Messages)
+@main(Messages("app.name"){
 <form id="user-data-form" role="form" action='@routes.UserController.addUser()' method="post" class="form-horizontal" align="center" autocomplete="off">
 
     <fieldset class="user-fieldset">
@@ -25,7 +25,7 @@
                         <div class="controls col-xs-offset-3 col-xs-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                <input type="text" id="firstName" name="firstName" value="" placeholder="First Name" class="form-control input-lg" required>
+                                <input type="text" id="firstName" class="form-control input-lg" name="firstName" value="" placeholder="First Name"/>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                         <div class="controls col-xs-offset-3 col-xs-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                <input type="text" id="lastName" name="lastName" value="" placeholder="Last Name" class="form-control input-lg" required>
+                                <input type="text" id="lastName" name="lastName" value="" placeholder="Last Name" class="form-control input-lg"/>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                         <div class="controls col-xs-offset-3 col-xs-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                <input type="tel" id="mobile" name="mobile" placeholder="Mobile" class="form-control input-lg" required>
+                                <input type="tel" id="mobile" name="mobile" placeholder="Mobile" class="form-control input-lg"/>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                         <div class="controls col-xs-offset-3 col-xs-9">
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                <input type="email" id="email" name="email" placeholder="Email" class="form-control input-lg" required>
+                                <input type="email" id="email" name="email" placeholder="Email" class="form-control input-lg"/>
                             </div>
                         </div>
                     </div>
@@ -130,5 +130,4 @@
         </table>
     </fieldset>
 </div>
-
-}
+})

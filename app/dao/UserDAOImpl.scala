@@ -11,13 +11,10 @@ import scala.concurrent.{ExecutionContext, Future}
 @Singleton
 class UserDAOImpl @Inject() (dbConfigProvider : DatabaseConfigProvider) (implicit ec: ExecutionContext) extends UserDAO {
 
-    private val dbConfig = dbConfigProvider.get[JdbcProfile]
+     val dbConfig = dbConfigProvider.get[JdbcProfile]
 
     import dbConfig._
-
-    //import necesario para TABLE[Users], antes era driver.api._ ahora es profile.api._
     import profile.api._
-
 
 
   class UserTableDef(tag: Tag) extends Table[User](tag, "user") {

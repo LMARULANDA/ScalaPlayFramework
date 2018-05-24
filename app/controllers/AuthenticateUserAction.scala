@@ -9,8 +9,8 @@ class AuthenticatedUserAction @Inject() (parser: BodyParsers.Default)(implicit e
   extends ActionBuilderImpl(parser) {
 
   private val logger = play.api.Logger(this.getClass)
-/*
-  override def invokeBlock[A](request: Request[A], block: (Request[A]) => Future[Result]) = {
+
+  /*override def invokeBlock[A](request: Request[A], block: (Request[A]) => Future[Result]) = {
     logger.debug("ENTERED AuthenticatedUserAction::invokeBlock")
     val maybeUsername = request.session.get("USERNAME")
     maybeUsername match {
@@ -24,6 +24,6 @@ class AuthenticatedUserAction @Inject() (parser: BodyParsers.Default)(implicit e
         res
       }
     }
-  }*/
-
+  }
+*/
 }
